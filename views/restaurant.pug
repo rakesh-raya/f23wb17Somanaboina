@@ -10,3 +10,12 @@ block content
        h3 #{item.name}
        p Cuisine: #{item.cuisine}
        p Rating: #{item.rating}
+
+     each item, index in results
+      div(onclick=`buy(${index})`)
+       Item #{index + 1}. #{item.cuisine}
+
+  script.
+   function buy(index) {
+    alert(`You purchased item ${index + 1}`);
+   }
